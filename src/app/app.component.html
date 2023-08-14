@@ -1,0 +1,7 @@
+<button (click)="setUser('user')">user</button>
+<button (click)="setUser('admin')" class="text-6xl font-bold underline">
+  admin
+</button>
+
+<app-product-shopping *ngIf="whatUser == 'user'"></app-product-shopping>
+<app-product-management *ngIf="whatUser == 'admin'"></app-product-management>
