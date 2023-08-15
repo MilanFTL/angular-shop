@@ -4,6 +4,7 @@ export interface Product {
   name: string;
   description: string;
   id: number;
+  inCart: boolean;
 }
 
 @Component({
@@ -24,8 +25,8 @@ export class AppComponent {
 
   ngOnInit(): void {
     this.stock = [
-      { name: 'car', description: 'a simple car', id: 1 },
-      { name: 'table', description: 'a big table', id: 2 },
+      { name: 'car', description: 'a simple car', id: 1, inCart: true },
+      { name: 'table', description: 'a big table', id: 2, inCart: false },
       // Add more objects as needed
     ];
   }
