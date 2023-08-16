@@ -26,6 +26,9 @@ export class AppComponent {
   ngOnInit(): void {
     this.stock = [
       { name: 'car', description: 'a simple car', id: 1, inCart: true },
+      { name: 'fasd', description: 'a simple car', id: 1, inCart: true },
+      { name: 'cdddar', description: 'a simple car', id: 1, inCart: true },
+      { name: 'ghg', description: 'a simple car', id: 1, inCart: true },
       { name: 'table', description: 'a big table', id: 2, inCart: false },
       // Add more objects as needed
     ];

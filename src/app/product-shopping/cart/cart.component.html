@@ -1,8 +1,18 @@
-<p>cart.component</p>
-<div class="display: flex text-white justify-center">
-  <h2>Cart</h2>
-  <div *ngFor="let Item of cartItems" class="bg-green-500 rounded p-4 m-2">
-    <h2 class="text-3xl text-bold">{{ Item.name }}</h2>
-    <p>{{ Item.description }}</p>
+<div class="display: flex justify-end mx-6">
+  <button
+    (click)="setVisibility()"
+    class="mx-2 mt-6 p-2 text-black font-normal text-3xl"
+  >
+    Warenkorb
+  </button>
+</div>
+
+<div
+  class="display: flex flex-col text-white justify-end mr-10 position: absolute right-0 w-[20vw] shadow"
+  *ngIf="elementVisible"
+>
+  <div *ngFor="let Item of cartItems" class="mx-4 mb-4">
+    <h2 class="text-3xl text-medium text-black">{{ Item.name | titlecase }}</h2>
+    <p class="text-black">{{ Item.description }}</p>
   </div>
 </div>

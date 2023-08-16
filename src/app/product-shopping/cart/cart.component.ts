@@ -8,4 +8,10 @@ import { Product } from '../../app.component'; // Import the Product interface f
 })
 export class CartComponent {
   @Input() cartItems: Product[] = [];
+
+  elementVisible: boolean = false;
+
+  setVisibility() {
+    this.elementVisible = !this.elementVisible;
+  }
 }

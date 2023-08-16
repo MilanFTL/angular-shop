@@ -1,8 +1,8 @@
+<app-cart [cartItems]="cartItems"></app-cart>
+
 <div class="display: flex text-white justify-center">
-  <div *ngFor="let Product of stock" class="bg-red-500 rounded p-4 m-2">
+  <div *ngFor="let Product of stock" class="bg-red-500 rounded-xl p-4 m-2">
     <h2 class="text-3xl text-bold">{{ Product.name }}</h2>
     <p>{{ Product.description }}</p>
   </div>
 </div>
-
-<app-cart [cartItems]="cartItems"></app-cart>
