@@ -1,8 +1,21 @@
 <app-cart [cartItems]="cartItems"></app-cart>
 
-<div class="display: flex text-white justify-center">
-  <div *ngFor="let Product of stock" class="bg-red-500 rounded-xl p-4 m-2">
-    <h2 class="text-3xl text-bold">{{ Product.name }}</h2>
-    <p>{{ Product.description }}</p>
+<h1 class="text-6xl text-bold ml-[2.5vw] mb-[1.5vw]">Shop</h1>
+
+<div class="display: flex text-white flex-wrap mx-[1.5vw]">
+  <div
+    *ngFor="let Product of stock"
+    class="bg-white shadow mx-[1vw] w-[30vw] mb-[2vw]"
+  >
+    <div class="h-[35vh]">
+      <img
+        src="{{ Product.img }}"
+        alt="My Image"
+        class="h-[100%] w-[100%] object-cover"
+      />
+    </div>
+    <h2 class="text-5xl text-bold text-black m-4">{{ Product.name }}</h2>
+    <p class="text-gray-400 font-light mt-4 ml-4">{{ Product.description }}</p>
+    <button class="bg-black p-2 m-4">Purchase</button>
   </div>
 </div>
