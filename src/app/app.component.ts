@@ -16,7 +16,7 @@ export interface Product {
 export class AppComponent {
   title = 'shop-app';
 
-  whatUser: string = '';
+  whatUser: string = 'user';
 
   setUser(user: string) {
     this.whatUser = user;

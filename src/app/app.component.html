@@ -1,20 +1,15 @@
-<div class="display: flex justify-center">
-  <button
-    (click)="setUser('user')"
-    class="mx-2 my-6 p-2 bg-blue-500 rounded-xl text-white"
-  >
-    user
-  </button>
-  <button
-    (click)="setUser('admin')"
-    class="mx-2 my-6 p-2 bg-blue-500 rounded-xl text-white"
-  >
-    admin
-  </button>
-</div>
-
 <app-product-shopping
   *ngIf="whatUser == 'user'"
   [stock]="stock"
 ></app-product-shopping>
 <app-product-management *ngIf="whatUser == 'admin'"></app-product-management>
+
+<div class="display: flex justify-center">
+  <!-- <button
+    (click)="setUser('user')"
+    class="mx-2 my-6 p-2 bg-blue-500 rounded-xl text-white"
+  >
+    user
+  </button> -->
+  <button (click)="setUser('admin')" class="mx-2 my-6 p-2">Admin Panel</button>
+</div>
