@@ -31,7 +31,7 @@ export class AppComponent {
         description:
           'Ein Elfer in seiner reinsten Form. Entwickelt in Flacht. Und gebaut für einen einzigen Zweck: maximalen Fahrspaß. ',
         id: 1,
-        inCart: true,
+        inCart: false,
         img: 'assets/porsche-1851246_1280.jpg',
       },
       {
@@ -39,7 +39,7 @@ export class AppComponent {
         description:
           'Ein Elfer in seiner reinsten Form. Entwickelt in Flacht. Und gebaut für einen einzigen Zweck: maximalen Fahrspaß. ',
         id: 1,
-        inCart: true,
+        inCart: false,
         img: 'assets/table.jpg',
       },
       {
@@ -47,7 +47,7 @@ export class AppComponent {
         description:
           'Ein Elfer in seiner reinsten Form. Entwickelt in Flacht. Und gebaut für einen einzigen Zweck: maximalen Fahrspaß. ',
         id: 1,
-        inCart: true,
+        inCart: false,
         img: 'assets/porsche-1851246_1280.jpg',
       },
       {
@@ -55,7 +55,7 @@ export class AppComponent {
         description:
           'Ein Elfer in seiner reinsten Form. Entwickelt in Flacht. Und gebaut für einen einzigen Zweck: maximalen Fahrspaß.',
         id: 1,
-        inCart: true,
+        inCart: false,
         img: 'assets/porsche-1851246_1280.jpg',
       },
       {
@@ -63,10 +63,19 @@ export class AppComponent {
         description:
           'Ein Elfer in seiner reinsten Form. Entwickelt in Flacht. Und gebaut für einen einzigen Zweck: maximalen Fahrspaß. ',
         id: 2,
-        inCart: false,
+        inCart: true,
         img: 'assets/porsche-1851246_1280.jpg',
       },
       // Add more objects as needed
     ];
+  }
+
+  putInCart(name: string) {
+    for (let i = 0; i < this.stock.length; i++) {
+      if (this.stock[i].name == name) {
+        this.stock[i] = { ...this.stock[i], inCart: true };
+        console.log(this.stock[i]);
+      }
+    }
   }
 }

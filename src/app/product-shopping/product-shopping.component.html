@@ -26,6 +26,8 @@
     <p class="text-gray-400 font-light mt-4 ml-4">
       {{ Product.description }}
     </p>
-    <button class="bg-black p-2 m-4">Purchase</button>
+    <button class="bg-black p-2 m-4" (click)="emitProductName(Product.name)">
+      Purchase
+    </button>
   </div>
 </div>

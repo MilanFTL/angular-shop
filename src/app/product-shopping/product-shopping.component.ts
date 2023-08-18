@@ -1,4 +1,10 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import {
+  Component,
+  Input,
+  Output,
+  EventEmitter,
+  SimpleChanges,
+} from '@angular/core';
 import { Product } from '../app.component'; // Import the Product interface from the correct path
 
 @Component({
@@ -8,13 +14,17 @@ import { Product } from '../app.component'; // Import the Product interface from
 })
 export class ProductShoppingComponent {
   @Input() stock: Product[] = [];
+
+  @Output() productName = new EventEmitter<string>();
+
   cartItems: Product[] = [];
 
-  ngOnInit() {
-    this.manageCartContent();
+  ngOnChanges(changes: SimpleChanges) {
+    console.log(changes);
   }
 
   manageCartContent() {
+    console.log('manageCartcontet');
     this.cartItems = [];
     for (let i = 0; i < this.stock.length; i++) {
       const product = this.stock[i];
@@ -22,5 +32,9 @@ export class ProductShoppingComponent {
         this.cartItems.push(product);
       }
     }
+  }
+
+  emitProductName(name: string) {
+    this.productName.emit(name);
   }
 }
