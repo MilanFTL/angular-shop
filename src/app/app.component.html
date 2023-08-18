@@ -1,7 +1,8 @@
 <app-product-shopping
   *ngIf="whatUser == 'user'"
   [stock]="stock"
-  (productName)="putInCart($event)"
+  (addToCartEvent)="putInCart($event)"
+  (removeFromCartEvent)="removeFromCart($event)"
 ></app-product-shopping>
 <app-product-management *ngIf="whatUser == 'admin'"></app-product-management>
 

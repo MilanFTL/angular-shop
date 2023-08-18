@@ -79,4 +79,13 @@ export class AppComponent {
     });
     this.stock = newStock;
   }
+  removeFromCart(name: string) {
+    const newStock = this.stock.map((product) => {
+      if (product.name === name) {
+        return { ...product, inCart: false };
+      }
+      return product;
+    });
+    this.stock = newStock;
+  }
 }

@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, EventEmitter, Output } from '@angular/core';
 import { Product } from '../../app.component'; // Import the Product interface from the correct path
 
 @Component({
@@ -9,9 +9,14 @@ import { Product } from '../../app.component'; // Import the Product interface f
 export class CartComponent {
   @Input() cartItems: Product[] = [];
 
+  @Output() removeFromCartEvent = new EventEmitter<string>();
+
   elementVisible: boolean = false;
 
   setVisibility() {
     this.elementVisible = !this.elementVisible;
+  }
+  removeFromCart(name: string) {
+    this.removeFromCartEvent.emit(name);
   }
 }

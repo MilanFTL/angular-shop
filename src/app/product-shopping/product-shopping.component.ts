@@ -15,7 +15,8 @@ import { Product } from '../app.component'; // Import the Product interface from
 export class ProductShoppingComponent {
   @Input() stock: Product[] = [];
 
-  @Output() productName = new EventEmitter<string>();
+  @Output() addToCartEvent = new EventEmitter<string>();
+  @Output() removeFromCartEvent = new EventEmitter<string>();
 
   cartItems: Product[] = [];
 
@@ -34,7 +35,11 @@ export class ProductShoppingComponent {
     }
   }
 
-  emitProductName(name: string) {
-    this.productName.emit(name);
+  addToCart(name: string) {
+    this.addToCartEvent.emit(name);
+  }
+
+  removeFromCart(name: string) {
+    this.removeFromCartEvent.emit(name);
   }
 }

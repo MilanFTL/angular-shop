@@ -5,7 +5,10 @@
   <a href=".">
     <span class="text-7xl">Angular Shop</span>
   </a>
-  <app-cart [cartItems]="cartItems"></app-cart>
+  <app-cart
+    [cartItems]="cartItems"
+    (removeFromCartEvent)="removeFromCart($event)"
+  ></app-cart>
 </div>
 
 <h1 class="text-6xl text-bold ml-[2.5vw] mb-[1.5vw]">Shop</h1>
@@ -26,7 +29,7 @@
     <p class="text-gray-400 font-light mt-4 ml-4">
       {{ Product.description }}
     </p>
-    <button class="bg-black p-2 m-4" (click)="emitProductName(Product.name)">
+    <button class="bg-black p-2 m-4" (click)="addToCart(Product.name)">
       Add To Cart
     </button>
   </div>
