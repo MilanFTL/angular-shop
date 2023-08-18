@@ -8,10 +8,16 @@
 </div>
 
 <div
-  class="display: flex flex-col text-white justify-start mr-[2.5vw] position: absolute right-0 w-[40vw] min-h-[40vh] drop-shadow-[0_35px_35px_rgba(0,0,0,0.6)] bg-white"
+  class="display: flex flex-col text-white justify-start mr-[2.5vw] position: absolute right-0 w-[40vw] drop-shadow-[0_35px_35px_rgba(0,0,0,0.6)] bg-white"
   *ngIf="elementVisible"
 >
   <h2 class="text-3xl font-normal text-black text-5xl mx-4 my-4">Cart</h2>
+  <div
+    *ngIf="cartItems.length === 0"
+    class="display: flex justify-center h-[30vh] items-center"
+  >
+    <p class="text-black ml-4">Your Cart Is Empty.</p>
+  </div>
   <div *ngFor="let Item of cartItems" class="mx-4 mb-4 display: flex">
     <div class="w-[9rem] h-[6rem]">
       <img

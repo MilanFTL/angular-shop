@@ -35,36 +35,36 @@ export class AppComponent {
         img: 'assets/porsche-1851246_1280.jpg',
       },
       {
-        name: 'fasd',
+        name: 'house',
         description:
           'Ein Elfer in seiner reinsten Form. Entwickelt in Flacht. Und gebaut für einen einzigen Zweck: maximalen Fahrspaß. ',
         id: 1,
         inCart: false,
-        img: 'assets/table.jpg',
+        img: 'assets/house.jpg',
       },
       {
-        name: 'cdddar',
+        name: 'coffee',
         description:
           'Ein Elfer in seiner reinsten Form. Entwickelt in Flacht. Und gebaut für einen einzigen Zweck: maximalen Fahrspaß. ',
         id: 1,
         inCart: false,
-        img: 'assets/porsche-1851246_1280.jpg',
+        img: 'assets/coffee.jpg',
       },
       {
-        name: 'ghg',
+        name: 'cocktail',
         description:
           'Ein Elfer in seiner reinsten Form. Entwickelt in Flacht. Und gebaut für einen einzigen Zweck: maximalen Fahrspaß.',
         id: 1,
         inCart: false,
-        img: 'assets/porsche-1851246_1280.jpg',
+        img: 'assets/cocktail.jpg',
       },
       {
         name: 'table',
         description:
           'Ein Elfer in seiner reinsten Form. Entwickelt in Flacht. Und gebaut für einen einzigen Zweck: maximalen Fahrspaß. ',
         id: 2,
-        inCart: true,
-        img: 'assets/porsche-1851246_1280.jpg',
+        inCart: false,
+        img: 'assets/table.jpg',
       },
       // Add more objects as needed
     ];
