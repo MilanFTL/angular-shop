@@ -8,11 +8,25 @@
 </div>
 
 <div
-  class="display: flex flex-col text-white justify-end mr-[2.5vw] position: absolute right-0 w-[20vw] shadow bg-white"
+  class="display: flex flex-col text-white justify-start mr-[2.5vw] position: absolute right-0 w-[40vw] min-h-[40vh] drop-shadow-[0_35px_35px_rgba(0,0,0,0.6)] bg-white"
   *ngIf="elementVisible"
 >
-  <div *ngFor="let Item of cartItems" class="mx-4 mb-4">
-    <h2 class="text-3xl text-medium text-black">{{ Item.name | titlecase }}</h2>
-    <p class="text-black">{{ Item.description }}</p>
+  <h2 class="text-3xl font-normal text-black text-5xl mx-4 my-4">Cart</h2>
+  <div *ngFor="let Item of cartItems" class="mx-4 mb-4 display: flex">
+    <div class="w-[9rem] h-[6rem]">
+      <img
+        src="{{ Item.img }}"
+        alt=""
+        class="h-[100%] w-[100%] object-cover rounded-2xl"
+      />
+    </div>
+    <div class="ml-4">
+      <h2 class="text-2xl text-medium text-black">
+        {{ Item.name | titlecase }}
+      </h2>
+      <p class="text-gray-400 text-sm font-extralight">
+        {{ Item.description }}
+      </p>
+    </div>
   </div>
 </div>
