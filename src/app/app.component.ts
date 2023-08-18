@@ -71,11 +71,12 @@ export class AppComponent {
   }
 
   putInCart(name: string) {
-    for (let i = 0; i < this.stock.length; i++) {
-      if (this.stock[i].name == name) {
-        this.stock[i] = { ...this.stock[i], inCart: true };
-        console.log(this.stock[i]);
+    const newStock = this.stock.map((product) => {
+      if (product.name === name) {
+        return { ...product, inCart: true };
       }
-    }
+      return product;
+    });
+    this.stock = newStock;
   }
 }

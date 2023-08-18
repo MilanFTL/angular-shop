@@ -20,7 +20,7 @@ export class ProductShoppingComponent {
   cartItems: Product[] = [];
 
   ngOnChanges(changes: SimpleChanges) {
-    console.log(changes);
+    this.manageCartContent();
   }
 
   manageCartContent() {
