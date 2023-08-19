@@ -66,6 +66,14 @@ export class AppComponent {
         inCart: false,
         img: 'assets/table.jpg',
       },
+      {
+        name: 'sunglasses',
+        description:
+          'Ein Elfer in seiner reinsten Form. Entwickelt in Flacht. Und gebaut für einen einzigen Zweck: maximalen Fahrspaß. ',
+        id: 2,
+        inCart: false,
+        img: 'assets/sunglasses.jpg',
+      },
       // Add more objects as needed
     ];
   }
