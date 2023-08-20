@@ -21,4 +21,11 @@ export class SlideshowComponent {
       this.cIndex = 0;
     }
   }
+  scroll(el: HTMLElement) {
+    el.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start',
+      inline: 'nearest',
+    });
+  }
 }

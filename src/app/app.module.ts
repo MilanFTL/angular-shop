@@ -7,6 +7,7 @@ import { ProductManagementComponent } from './product-management/product-managem
 import { ProductShoppingComponent } from './product-shopping/product-shopping.component';
 import { CartComponent } from './product-shopping/cart/cart.component';
 import { SlideshowComponent } from './product-shopping/slideshow/slideshow.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -14,13 +15,10 @@ import { SlideshowComponent } from './product-shopping/slideshow/slideshow.compo
     ProductManagementComponent,
     ProductShoppingComponent,
     CartComponent,
-    SlideshowComponent
+    SlideshowComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+  imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

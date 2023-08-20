@@ -32,7 +32,7 @@ export class AppComponent {
           'Ein Elfer in seiner reinsten Form. Entwickelt in Flacht. Und gebaut für einen einzigen Zweck: maximalen Fahrspaß. ',
         id: 1,
         inCart: false,
-        img: 'assets/porsche-1851246_1280.jpg',
+        img: 'assets/porscheHr.jpg',
       },
       {
         name: 'house',
