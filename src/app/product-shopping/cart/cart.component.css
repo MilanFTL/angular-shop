@@ -13,3 +13,7 @@
 .text-black{
     color:black;
 }
+.transition {
+    transition: background-color 0.3s ease;
+    transition: color 0.3s ease;
+}

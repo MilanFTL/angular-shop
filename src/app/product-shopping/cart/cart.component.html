@@ -1,8 +1,8 @@
 <div class="display: flex justify-end z-50">
   <button
     (click)="setVisibility()"
-    class="text-white font-normal text-3xl mr-[2.5vw] z-50"
-    [ngClass]="{ 'text-black': elementVisible }"
+    class="text-white font-normal text-3xl mr-[2.5vw] z-50 transition-colors duration-300 ease-in-out"
+    [ngClass]="{ 'text-black': elementVisible || scrolled }"
   >
     Cart
   </button>

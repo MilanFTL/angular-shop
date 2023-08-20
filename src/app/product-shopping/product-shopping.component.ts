@@ -7,6 +7,7 @@ import {
   AfterViewInit,
   ViewChild,
   NgZone,
+  HostListener,
 } from '@angular/core';
 import { Product } from '../app.component'; // Import the Product interface from the correct path
 import { SlideshowComponent } from './slideshow/slideshow.component';
@@ -63,5 +64,12 @@ export class ProductShoppingComponent implements AfterViewInit {
 
   removeFromCart(name: string) {
     this.removeFromCartEvent.emit(name);
+  }
+
+  scrolled: boolean = false;
+
+  @HostListener('window:scroll', [])
+  onWindowScroll() {
+    this.scrolled = window.scrollY >= window.innerHeight * 1.1;
   }
 }

@@ -1,4 +1,10 @@
-import { Component, Input, EventEmitter, Output } from '@angular/core';
+import {
+  Component,
+  Input,
+  EventEmitter,
+  Output,
+  HostListener,
+} from '@angular/core';
 import { Product } from '../../app.component'; // Import the Product interface from the correct path
 import {
   trigger,
@@ -26,8 +32,8 @@ import {
           right: '0',
         })
       ),
-      transition('hidden => visible', animate('0.3s ease-in-out')),
-      transition('visible => hidden', animate('0.3s ease-in-out')),
+      transition('hidden => visible', animate('0.2s ease-in-out')),
+      transition('visible => hidden', animate('0.6s ease-in-out')),
     ]),
   ],
 })
@@ -43,5 +49,12 @@ export class CartComponent {
   }
   removeFromCart(name: string) {
     this.removeFromCartEvent.emit(name);
+  }
+
+  scrolled: boolean = false;
+
+  @HostListener('window:scroll', [])
+  onWindowScroll() {
+    this.scrolled = window.scrollY >= window.innerHeight * 0.8;
   }
 }
