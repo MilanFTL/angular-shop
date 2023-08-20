@@ -4,15 +4,28 @@ import {
   Output,
   EventEmitter,
   SimpleChanges,
+  AfterViewInit,
+  ViewChild,
+  NgZone,
 } from '@angular/core';
 import { Product } from '../app.component'; // Import the Product interface from the correct path
+import { SlideshowComponent } from './slideshow/slideshow.component';
 
 @Component({
   selector: 'app-product-shopping',
   templateUrl: './product-shopping.component.html',
   styleUrls: ['./product-shopping.component.css'],
 })
-export class ProductShoppingComponent {
+export class ProductShoppingComponent implements AfterViewInit {
+  constructor(private ngZone: NgZone) {}
+
+  @ViewChild(SlideshowComponent) SlideshowRef!: SlideshowComponent;
+
+  ngAfterViewInit() {}
+  ngOnInit() {
+    this.angularTimeout(0);
+  }
+
   @Input() stock: Product[] = [];
 
   @Output() addToCartEvent = new EventEmitter<string>();
@@ -24,8 +37,17 @@ export class ProductShoppingComponent {
     this.manageCartContent();
   }
 
+  parentmessage: string = 'hellofromparent';
+
+  angularTimeout(duration: number) {
+    setTimeout(() => {
+      console.log(this.SlideshowRef.source);
+      this.SlideshowRef.cycle();
+      this.angularTimeout(3000);
+    }, duration);
+  }
+
   manageCartContent() {
-    console.log('manageCartcontet');
     this.cartItems = [];
     for (let i = 0; i < this.stock.length; i++) {
       const product = this.stock[i];
