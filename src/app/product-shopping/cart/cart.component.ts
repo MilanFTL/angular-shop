@@ -55,6 +55,6 @@ export class CartComponent {
 
   @HostListener('window:scroll', [])
   onWindowScroll() {
-    this.scrolled = window.scrollY >= window.innerHeight * 0.8;
+    this.scrolled = window.scrollY >= window.innerHeight * 1.1;
   }
 }

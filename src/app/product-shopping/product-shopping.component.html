@@ -1,5 +1,5 @@
 <div
-  class="display: flex items-baseline justify-between py-7 fixed z-10 w-[100%] transition-colors duration-300 ease-in-out drop-shadow-xl"
+  class="display: flex items-baseline justify-between py-5 fixed z-10 w-[100%] transition-colors duration-300 ease-in-out drop-shadow-xl"
   [ngClass]="{ 'solid-background': scrolled }"
 >
   <span class="text-white font-normal text-3xl ml-[2.5vw] invisible"
@@ -7,7 +7,7 @@
   >
   <a href=".">
     <span
-      class="text-7xl text-white drop-shadow-xl transition-colors duration-300 ease-in-out"
+      class="text-4xl text-white drop-shadow-xl transition-colors duration-300 ease-in-out"
       [ngClass]="{ 'black-text': scrolled }"
       >Angular Shop</span
     >
@@ -39,7 +39,7 @@
     <p class="text-gray-400 font-light mt-4 ml-4">
       {{ Product.description }}
     </p>
-    <button class="bg-black p-2 m-4" (click)="addToCart(Product.name)">
+    <button class="addToCart" (click)="addToCart(Product.name)">
       Add To Cart
     </button>
   </div>
