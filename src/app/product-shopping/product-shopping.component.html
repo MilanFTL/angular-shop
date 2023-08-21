@@ -1,5 +1,5 @@
 <div
-  class="display: flex items-baseline justify-between py-5 fixed z-10 w-[100%] transition-colors duration-300 ease-in-out drop-shadow-xl"
+  class="display: flex items-baseline justify-between py-5 fixed z-10 w-[100%] transition-colors duration-300 ease-in-out drop-shadow-xl border-b border-white border-opacity-20"
   [ngClass]="{ 'solid-background': scrolled }"
 >
   <span class="text-white font-normal text-3xl ml-[2.5vw] invisible"
@@ -25,7 +25,7 @@
 
 <div class="display: flex text-white flex-wrap mx-[1.5vw]">
   <div
-    *ngFor="let Product of stock"
+    *ngFor="let Product of stock; let i = index"
     class="bg-white shadow mx-[1vw] w-[30vw] mb-[2vw]"
   >
     <div class="h-[35vh]">
@@ -39,8 +39,15 @@
     <p class="text-gray-400 font-light mt-4 ml-4">
       {{ Product.description }}
     </p>
-    <button class="addToCart" (click)="addToCart(Product.name)">
-      Add To Cart
+    <button
+      class="addToCart"
+      (click)="addToCart(Product.name, i)"
+      [class.selected]="i === selectedButtonIndex"
+    >
+      <span *ngIf="selectedButtonIndex === i" class="text-black"
+        >Added To Cart</span
+      >
+      <span *ngIf="selectedButtonIndex != i">Add To Cart</span>
     </button>
   </div>
 </div>

@@ -58,14 +58,14 @@ export class ProductShoppingComponent implements AfterViewInit {
     }
   }
 
-  addToCart(name: string) {
+  selectedButtonIndex: number = -1;
+  addToCart(name: string, index: number) {
     const button = document.getElementsByClassName(
       'addToCart'
     )[0] as HTMLElement;
 
     this.addToCartEvent.emit(name);
-
-    button.style.backgroundColor = 'red';
+    this.selectedButtonIndex = index;
   }
 
   removeFromCart(name: string) {
