@@ -4,6 +4,8 @@ import {
   EventEmitter,
   Output,
   HostListener,
+  OnChanges,
+  SimpleChanges,
 } from '@angular/core';
 import { Product } from '../../app.component'; // Import the Product interface from the correct path
 import {
@@ -33,16 +35,24 @@ import {
         })
       ),
       transition('hidden => visible', animate('0.2s ease-in-out')),
-      transition('visible => hidden', animate('0.6s ease-in-out')),
+      transition('visible => hidden', animate('0.4s ease-in-out')),
     ]),
   ],
 })
-export class CartComponent {
+export class CartComponent implements OnChanges {
   @Input() cartItems: Product[] = [];
 
   @Output() removeFromCartEvent = new EventEmitter<string>();
 
   elementVisible: boolean = false;
+
+  cartcounter: number = this.cartItems.length;
+
+  ngOnChanges(changes: SimpleChanges): void {
+    if (changes['cartItems']) {
+      this.cartcounter = this['cartItems'].length;
+    }
+  }
 
   setVisibility() {
     this.elementVisible = !this.elementVisible;
@@ -55,6 +65,6 @@ export class CartComponent {
 
   @HostListener('window:scroll', [])
   onWindowScroll() {
-    this.scrolled = window.scrollY >= window.innerHeight * 1.1;
+    this.scrolled = window.scrollY >= window.innerHeight * 0.1;
   }
 }
