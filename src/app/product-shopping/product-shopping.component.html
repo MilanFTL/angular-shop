@@ -1,21 +1,34 @@
-<div
-  class="display: flex items-baseline justify-between py-5 fixed z-10 w-[100%] transition-colors duration-300 ease-in-out drop-shadow-xl border-b border-white border-opacity-20"
-  [ngClass]="{ 'solid-background': scrolled }"
->
-  <span class="text-white font-normal text-3xl ml-[2.5vw] invisible"
-    >Warenkorb</span
+<div class="fixed z-10 w-[100%]">
+  <div
+    class="display: flex items-baseline justify-between py-3 transition-colors duration-300 ease-in-out border-b border-white border-opacity-20"
+    [ngClass]="{ 'solid-background': scrolled }"
   >
-  <a href=".">
-    <span
-      class="text-4xl text-white drop-shadow-xl transition-colors duration-300 ease-in-out"
-      [ngClass]="{ 'black-text': scrolled }"
-      >Angular Shop</span
+    <span class="text-white font-normal text-3xl ml-[2.5vw] invisible"
+      >Cart(0)</span
     >
-  </a>
-  <app-cart
-    [cartItems]="cartItems"
-    (removeFromCartEvent)="removeFromCart($event)"
-  ></app-cart>
+    <a href=".">
+      <span
+        class="text-4xl text-white transition-colors duration-300 ease-in-out"
+        [ngClass]="{ 'black-text': scrolled }"
+        >Angular Shop</span
+      >
+    </a>
+    <app-cart
+      [cartItems]="cartItems"
+      (removeFromCartEvent)="removeFromCart($event)"
+    ></app-cart>
+  </div>
+  <div
+    class="display: flex justify-center py-1 transition-colors duration-300 ease-in-out border-b border-white border-opacity-20"
+    [ngClass]="{ 'solid-background': scrolled }"
+  >
+    <ul class="navbar-ul">
+      <li><a href="" [ngClass]="{ 'black-text': scrolled }">Porsches</a></li>
+      <li><a href="" [ngClass]="{ 'black-text': scrolled }">Sunglasses</a></li>
+      <li><a href="" [ngClass]="{ 'black-text': scrolled }">Tables</a></li>
+      <li><a href="" [ngClass]="{ 'black-text': scrolled }">Coffee</a></li>
+    </ul>
+  </div>
 </div>
 
 <app-slideshow [stock]="stock"></app-slideshow>

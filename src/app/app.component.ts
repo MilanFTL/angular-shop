@@ -74,6 +74,7 @@ export class AppComponent {
         inCart: false,
         img: 'assets/sunglassesHr.jpg',
       },
+
       // Add more objects as needed
     ];
   }
