@@ -66,6 +66,10 @@ export class ProductShoppingComponent implements AfterViewInit {
 
     this.addToCartEvent.emit(name);
     this.selectedButtonIndex = index;
+
+    setTimeout(() => {
+      this.selectedButtonIndex = -1;
+    }, 1500);
   }
 
   removeFromCart(name: string) {
