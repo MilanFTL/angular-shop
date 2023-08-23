@@ -1,7 +1,7 @@
 <div class="fixed z-10 w-[100%]">
   <div
     class="display: flex items-baseline justify-between py-3 transition-colors duration-300 ease-in-out border-b border-white border-opacity-20"
-    [ngClass]="{ 'solid-background': scrolled }"
+    [ngClass]="{ 'solid-background': scrolled, 'b-border-black': scrolled }"
   >
     <span class="text-white font-normal text-3xl ml-[2.5vw] invisible"
       >Cart(0)</span
@@ -60,6 +60,12 @@
       <span *ngIf="selectedButtonIndex === i" class="text-black"
         >Added To Cart</span
       >
+      <img
+        src="assets/checkmarkThin.svg"
+        alt=""
+        class="h-[1rem] display: inline mb-1 ml-4"
+        *ngIf="selectedButtonIndex === i"
+      />
       <span *ngIf="selectedButtonIndex != i">Add To Cart</span>
     </button>
   </div>

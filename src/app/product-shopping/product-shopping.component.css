@@ -1,6 +1,9 @@
 .solid-background{
     background-color: white;
 }
+.b-border-black{
+    border-bottom: rgba(157, 157, 157, 0.3) solid 1px;
+}
 .black-text{
     color: black;
 }
