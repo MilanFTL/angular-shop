@@ -20,11 +20,14 @@ import { SlideshowComponent } from './slideshow/slideshow.component';
 export class ProductShoppingComponent implements AfterViewInit {
   constructor(private ngZone: NgZone) {}
 
+  currentTime: Date = new Date();
+
   @ViewChild(SlideshowComponent) SlideshowRef!: SlideshowComponent;
 
   ngAfterViewInit() {}
   ngOnInit() {
     this.angularTimeout(0);
+    this.updateTime();
   }
 
   @Input() stock: Product[] = [];
@@ -81,5 +84,13 @@ export class ProductShoppingComponent implements AfterViewInit {
   @HostListener('window:scroll', [])
   onWindowScroll() {
     this.scrolled = window.scrollY >= window.innerHeight * 0.1;
+  }
+
+  updateTime() {
+    setTimeout(() => {
+      this.currentTime = new Date();
+      console.log('update time');
+      this.updateTime();
+    }, 1000);
   }
 }
