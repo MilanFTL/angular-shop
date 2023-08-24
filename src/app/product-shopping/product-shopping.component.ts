@@ -45,7 +45,6 @@ export class ProductShoppingComponent implements AfterViewInit {
 
   angularTimeout(duration: number) {
     setTimeout(() => {
-      console.log(this.SlideshowRef.source);
       this.SlideshowRef.cycle();
       this.angularTimeout(3000);
     }, duration);
@@ -89,7 +88,6 @@ export class ProductShoppingComponent implements AfterViewInit {
   updateTime() {
     setTimeout(() => {
       this.currentTime = new Date();
-      console.log('update time');
       this.updateTime();
     }, 1000);
   }

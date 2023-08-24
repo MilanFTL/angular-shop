@@ -17,3 +17,14 @@
     transition: background-color 0.3s ease;
     transition: color 0.3s ease;
 }
+.cartTitleButton{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 25vw;
+    margin-left: 2vw;
+}
+.widthHeight6{
+    width: 6rem;
+    height: 6rem;
+}

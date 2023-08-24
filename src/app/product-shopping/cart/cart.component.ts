@@ -6,6 +6,8 @@ import {
   HostListener,
   OnChanges,
   SimpleChanges,
+  ViewChild,
+  ElementRef,
 } from '@angular/core';
 import { Product } from '../../app.component'; // Import the Product interface from the correct path
 import {
@@ -44,7 +46,7 @@ export class CartComponent implements OnChanges {
 
   @Output() removeFromCartEvent = new EventEmitter<string>();
 
-  elementVisible: boolean = false;
+  elementVisible: boolean = true;
 
   cartcounter: number = this.cartItems.length;
 
@@ -66,5 +68,23 @@ export class CartComponent implements OnChanges {
   @HostListener('window:scroll', [])
   onWindowScroll() {
     this.scrolled = window.scrollY >= window.innerHeight * 0.1;
+  }
+
+  @ViewChild('cart') cart!: ElementRef;
+  @ViewChild('cartButton') cartButton!: ElementRef;
+
+  @HostListener('document:click', ['$event'])
+  onClick(event: MouseEvent) {
+    const clickedElement = event.target as HTMLElement;
+    const cartElement = this.cart.nativeElement;
+    const cartButtonElement = this.cartButton.nativeElement;
+
+    if (
+      !cartElement.contains(clickedElement) &&
+      !cartButtonElement.contains(clickedElement)
+    ) {
+      // Call your function here
+      this.elementVisible = false;
+    }
   }
 }

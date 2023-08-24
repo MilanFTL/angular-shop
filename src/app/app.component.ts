@@ -6,6 +6,7 @@ export interface Product {
   id: number;
   inCart: boolean;
   img: string;
+  price: number;
 }
 
 @Component({
@@ -31,48 +32,54 @@ export class AppComponent {
         description:
           'Ein Elfer in seiner reinsten Form. Entwickelt in Flacht. Und gebaut für einen einzigen Zweck: maximalen Fahrspaß. ',
         id: 1,
-        inCart: false,
+        inCart: true,
         img: 'assets/porscheHr.jpg',
+        price: 240000,
       },
       {
         name: 'house',
         description:
           'Ein Elfer in seiner reinsten Form. Entwickelt in Flacht. Und gebaut für einen einzigen Zweck: maximalen Fahrspaß. ',
         id: 1,
-        inCart: false,
+        inCart: true,
         img: 'assets/houseHr.jpg',
+        price: 500000,
       },
       {
         name: 'coffee',
         description:
           'Ein Elfer in seiner reinsten Form. Entwickelt in Flacht. Und gebaut für einen einzigen Zweck: maximalen Fahrspaß. ',
         id: 1,
-        inCart: false,
+        inCart: true,
         img: 'assets/coffeeHr.jpg',
+        price: 5,
       },
       {
         name: 'cocktail',
         description:
           'Ein Elfer in seiner reinsten Form. Entwickelt in Flacht. Und gebaut für einen einzigen Zweck: maximalen Fahrspaß.',
         id: 1,
-        inCart: false,
+        inCart: true,
         img: 'assets/cocktailHr.jpg',
+        price: 7,
       },
       {
         name: 'table',
         description:
           'Ein Elfer in seiner reinsten Form. Entwickelt in Flacht. Und gebaut für einen einzigen Zweck: maximalen Fahrspaß. ',
         id: 2,
-        inCart: false,
+        inCart: true,
         img: 'assets/tableHr.jpg',
+        price: 200,
       },
       {
         name: 'sunglasses',
         description:
           'Ein Elfer in seiner reinsten Form. Entwickelt in Flacht. Und gebaut für einen einzigen Zweck: maximalen Fahrspaß. ',
         id: 2,
-        inCart: false,
+        inCart: true,
         img: 'assets/sunglassesHr.jpg',
+        price: 150,
       },
 
       // Add more objects as needed
