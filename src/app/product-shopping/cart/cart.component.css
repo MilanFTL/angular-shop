@@ -3,9 +3,9 @@
     flex-direction: column;
     justify-content: start;
     position: absolute;
-    right: -40vw;
+    right: -50vw;
     top: 0;
-    width: 40vw;
+    width: 50vw;
     height: 100vh;
     background-color: white;
     filter: drop-shadow(0 35px 35px rgba(0, 0, 0, 0.6))
@@ -19,10 +19,9 @@
 }
 .cartTitleButton{
     display: flex;
-    justify-content: space-between;
+    justify-content: start;
     align-items: center;
-    width: 25vw;
-    margin-left: 2vw;
+    width: 38vw;
 }
 .widthHeight6{
     width: 6rem;

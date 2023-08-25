@@ -27,7 +27,7 @@ import {
       state(
         'hidden',
         style({
-          right: '-40vw',
+          right: '-50vw',
         })
       ),
       state(

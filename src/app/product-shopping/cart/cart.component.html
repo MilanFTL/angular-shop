@@ -21,13 +21,13 @@
     <p class="text-black ml-4">Your Cart Is Empty.</p>
   </div>
   <div class="mt-[3rem]" *ngIf="cartItems.length > 0">
-    <div class="ml-12 mb-8">
+    <div class="ml-[3vw] mb-12">
       <h2 class="text-4xl font-medium">Shopping Cart</h2>
     </div>
 
     <div
       *ngFor="let Item of cartItems"
-      class="ml-12 mb-8 display: flex items-center"
+      class="ml-[3vw] mb-12 display: flex items-center"
     >
       <div class="widthHeight6">
         <img
@@ -38,18 +38,18 @@
       </div>
       <div class="cartTitleButton">
         <div>
-          <h2 class="text-3xl text-medium text-black w-[15vw]">
+          <h2 class="text-3xl text-medium text-black w-[16vw] ml-[2vw]">
             {{ Item.name | titlecase }}
           </h2>
         </div>
         <div>
-          <p class="text-xl text-medium text-black w-[10vw]">
+          <p class="text-xl text-medium text-black w-[18.5vw]">
             {{ Item.price | currency : "EUR" }}
           </p>
         </div>
 
-        <button class="text-black" (click)="removeFromCart(Item.name)">
-          X
+        <button (click)="removeFromCart(Item.name)">
+          <img src="assets/close.svg" alt="" class="w-[1.5vw]" />
         </button>
       </div>
     </div>
