@@ -19,15 +19,84 @@
     ></app-cart>
   </div>
   <div
-    class="display: flex justify-center py-1 transition-colors duration-300 ease-in-out border-b border-white border-opacity-20"
+    class="display: flex justify-center transition-colors duration-300 ease-in-out border-b border-white border-opacity-20"
     [ngClass]="{ 'solid-background': scrolled }"
   >
     <ul class="navbar-ul">
-      <li><a href="" [ngClass]="{ 'black-text': scrolled }">Porsches</a></li>
-      <li><a href="" [ngClass]="{ 'black-text': scrolled }">Sunglasses</a></li>
-      <li><a href="" [ngClass]="{ 'black-text': scrolled }">Tables</a></li>
-      <li><a href="" [ngClass]="{ 'black-text': scrolled }">Coffee</a></li>
+      <li>
+        <span
+          href=""
+          [ngClass]="{ 'black-text': scrolled }"
+          class="porsches-btn"
+          (mouseenter)="onButtonEnter($event)"
+          (mouseleave)="onButtonLeave()"
+          >Porsches</span
+        >
+      </li>
+
+      <li>
+        <span
+          href=""
+          [ngClass]="{ 'black-text': scrolled }"
+          class="sunglasses-btn"
+          (mouseenter)="onButtonEnter($event)"
+          (mouseleave)="onButtonLeave()"
+          >Sunglasses</span
+        >
+      </li>
+      <li>
+        <span
+          href=""
+          [ngClass]="{ 'black-text': scrolled }"
+          class="tables-btn"
+          (mouseenter)="onButtonEnter($event)"
+          (mouseleave)="onButtonLeave()"
+          >Tables</span
+        >
+      </li>
+      <li>
+        <span
+          href=""
+          [ngClass]="{ 'black-text': scrolled }"
+          class="coffee-btn"
+          (mouseenter)="onButtonEnter($event)"
+          (mouseleave)="onButtonLeave()"
+          >Coffee</span
+        >
+      </li>
     </ul>
+  </div>
+  <div
+    class="porsches"
+    #porsches
+    (mouseenter)="onDropdownEnter()"
+    (mouseleave)="onDropdownLeave()"
+  >
+    porsches
+  </div>
+  <div
+    class="sunglasses"
+    #sunglasses
+    (mouseenter)="onDropdownEnter()"
+    (mouseleave)="onDropdownLeave()"
+  >
+    sunglasses
+  </div>
+  <div
+    class="tables"
+    #tables
+    (mouseenter)="onDropdownEnter()"
+    (mouseleave)="onDropdownLeave()"
+  >
+    tables
+  </div>
+  <div
+    class="coffee"
+    #coffee
+    (mouseenter)="onDropdownEnter()"
+    (mouseleave)="onDropdownLeave()"
+  >
+    coffee
   </div>
 </div>
 

@@ -8,6 +8,7 @@ import { ProductShoppingComponent } from './product-shopping/product-shopping.co
 import { CartComponent } from './product-shopping/cart/cart.component';
 import { SlideshowComponent } from './product-shopping/slideshow/slideshow.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NavigationDropdownComponent } from './product-shopping/navigation-dropdown/navigation-dropdown.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     ProductShoppingComponent,
     CartComponent,
     SlideshowComponent,
+    NavigationDropdownComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule],
   providers: [],
