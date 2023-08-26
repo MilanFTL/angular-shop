@@ -46,7 +46,7 @@ export class CartComponent implements OnChanges {
 
   @Output() removeFromCartEvent = new EventEmitter<string>();
 
-  elementVisible: boolean = true;
+  elementVisible: boolean = false;
 
   cartcounter: number = this.cartItems.length;
 

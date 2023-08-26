@@ -50,7 +50,7 @@ export class AppComponent {
         description:
           'Ein Elfer in seiner reinsten Form. Entwickelt in Flacht. Und gebaut für einen einzigen Zweck: maximalen Fahrspaß. ',
         id: 1,
-        inCart: true,
+        inCart: false,
         img: 'assets/coffeeHr.jpg',
         price: 5,
       },
@@ -59,7 +59,7 @@ export class AppComponent {
         description:
           'Ein Elfer in seiner reinsten Form. Entwickelt in Flacht. Und gebaut für einen einzigen Zweck: maximalen Fahrspaß.',
         id: 1,
-        inCart: true,
+        inCart: false,
         img: 'assets/cocktailHr.jpg',
         price: 7,
       },
@@ -68,7 +68,7 @@ export class AppComponent {
         description:
           'Ein Elfer in seiner reinsten Form. Entwickelt in Flacht. Und gebaut für einen einzigen Zweck: maximalen Fahrspaß. ',
         id: 2,
-        inCart: true,
+        inCart: false,
         img: 'assets/tableHr.jpg',
         price: 200,
       },
@@ -77,7 +77,7 @@ export class AppComponent {
         description:
           'Ein Elfer in seiner reinsten Form. Entwickelt in Flacht. Und gebaut für einen einzigen Zweck: maximalen Fahrspaß. ',
         id: 2,
-        inCart: true,
+        inCart: false,
         img: 'assets/sunglassesHr.jpg',
         price: 150,
       },
