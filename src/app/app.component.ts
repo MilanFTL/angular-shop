@@ -32,7 +32,7 @@ export class AppComponent {
         description:
           'Ein Elfer in seiner reinsten Form. Entwickelt in Flacht. Und gebaut für einen einzigen Zweck: maximalen Fahrspaß. ',
         id: 1,
-        inCart: true,
+        inCart: false,
         img: 'assets/porscheHr.jpg',
         price: 240000,
       },
@@ -41,7 +41,7 @@ export class AppComponent {
         description:
           'Ein Elfer in seiner reinsten Form. Entwickelt in Flacht. Und gebaut für einen einzigen Zweck: maximalen Fahrspaß. ',
         id: 1,
-        inCart: true,
+        inCart: false,
         img: 'assets/houseHr.jpg',
         price: 500000,
       },

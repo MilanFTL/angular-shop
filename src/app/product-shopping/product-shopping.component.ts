@@ -25,7 +25,9 @@ export class ProductShoppingComponent implements AfterViewInit {
 
   @ViewChild(SlideshowComponent) SlideshowRef!: SlideshowComponent;
 
-  ngAfterViewInit() {}
+  ngAfterViewInit() {
+    this.clearDropdown();
+  }
   ngOnInit() {
     this.angularTimeout(0);
     this.updateTime();
@@ -128,7 +130,7 @@ export class ProductShoppingComponent implements AfterViewInit {
       this.clearDropdown();
     } else {
       if (this.buttonClass === 'porsches-btn' && this.porsches && this.navbar) {
-        this.porsches.nativeElement.style.display = 'block';
+        this.porsches.nativeElement.style.display = 'flex';
         this.navbarHovered = true;
         this.navbar.nativeElement.style.borderBottom = 'none';
       } else if (
@@ -136,7 +138,7 @@ export class ProductShoppingComponent implements AfterViewInit {
         this.sunglasses &&
         this.navbar
       ) {
-        this.sunglasses.nativeElement.style.display = 'block';
+        this.sunglasses.nativeElement.style.display = 'flex';
         this.navbarHovered = true;
         this.navbar.nativeElement.style.borderBottom = 'none';
       } else if (
@@ -144,7 +146,7 @@ export class ProductShoppingComponent implements AfterViewInit {
         this.tables &&
         this.navbar
       ) {
-        this.tables.nativeElement.style.display = 'block';
+        this.tables.nativeElement.style.display = 'flex';
         this.navbarHovered = true;
         this.navbar.nativeElement.style.borderBottom = 'none';
       } else if (
@@ -152,7 +154,7 @@ export class ProductShoppingComponent implements AfterViewInit {
         this.coffee &&
         this.navbar
       ) {
-        this.coffee.nativeElement.style.display = 'block';
+        this.coffee.nativeElement.style.display = 'flex';
         this.navbarHovered = true;
         this.navbar.nativeElement.style.borderBottom = 'none';
       }

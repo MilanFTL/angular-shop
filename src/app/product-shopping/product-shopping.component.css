@@ -27,6 +27,7 @@
     padding: 0 1rem 0 1rem;
     font-size: 1rem;
     color: white;
+    cursor: pointer;
 }
 .navbar {
     display: flex;
@@ -44,10 +45,59 @@
 }
 .porsches, .sunglasses, .tables, .coffee{
     width: 100%;
-    height: 30vh;
+    height: 40vh;
     display: none;
     background-color: transparent;
     border-top: 1px solid rgba(0, 0, 0, 0.129);
     transition: background-color 0.3s ease;
     color: rgb(0, 0, 0);
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    flex-direction: row;
+}
+
+
+/* Dropdown */
+
+.DropdownImgContainer{
+    display: flex;
+    align-items: start;
+    justify-content: space-around;
+    height: 35vh;
+    width: calc(65vw - 2.5vh);
+    margin: 2.5vh 2.5vh 2.5vh 0;
+}
+.DropdownImgColumn{
+    width: 45%;
+    height: 100%;
+    position: relative;
+}
+.ImgText{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.DropdownTextContainer{
+    display: flex;
+    align-items: start;
+    justify-content: space-around;
+    width: calc(35vw - 2.5vh);
+    margin: 2.5vh 0 0 0;
+}
+.DropdownTextContainer h3{
+    font-size: 1rem;
+    opacity: 0.2;
+    margin: 0 0 1rem 0;
+}
+.DropdownTextContainer li {
+    font-size: 1rem;
+    opacity: 0.8;
+    margin: 0 0 0.3rem 0;
 }
