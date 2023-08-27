@@ -98,6 +98,8 @@ export class ProductShoppingComponent implements AfterViewInit {
   @ViewChild('tables') tables: ElementRef | undefined;
   @ViewChild('coffee') coffee: ElementRef | undefined;
 
+  @ViewChild('navbar') navbar: ElementRef | undefined;
+
   buttonClass: string = '';
   cursorOnButton: boolean = false;
   cursonOnDropdown: boolean = false;
@@ -106,51 +108,78 @@ export class ProductShoppingComponent implements AfterViewInit {
     this.buttonClass = event.target.classList[0];
     this.cursorOnButton = true;
     this.manageMegaDropdown();
+    console.log(
+      'OnButtonEnter ' + this.cursorOnButton + ' ' + this.cursonOnDropdown
+    );
   }
   onDropdownEnter() {
     this.cursonOnDropdown = true;
+    this.manageMegaDropdown();
+    console.log(
+      'OnDropdownEnter' + this.cursorOnButton + ' ' + this.cursonOnDropdown
+    );
   }
   onButtonLeave() {
     this.cursorOnButton = false;
-    setTimeout(() => {
-      this.manageMegaDropdown();
-    }, 10);
+    this.manageMegaDropdown();
+    console.log(
+      'OnButtonLeave' + this.cursorOnButton + ' ' + this.cursonOnDropdown
+    );
   }
   onDropdownLeave() {
     this.cursonOnDropdown = false;
-    this.manageMegaDropdown();
+    this.clearDropdown();
+    console.log(
+      'OnDropdownLeave' + this.cursorOnButton + ' ' + this.cursonOnDropdown
+    );
   }
 
   manageMegaDropdown() {
+    if (!this.cursonOnDropdown && !this.cursorOnButton) {
+      this.clearDropdown();
+    } else {
+      console.log('tried to block');
+      if (this.buttonClass === 'porsches-btn' && this.porsches && this.navbar) {
+        this.porsches.nativeElement.style.display = 'block';
+        this.navbar.nativeElement.style.borderBottom = 'none';
+      } else if (
+        this.buttonClass === 'sunglasses-btn' &&
+        this.sunglasses &&
+        this.navbar
+      ) {
+        this.sunglasses.nativeElement.style.display = 'block';
+        this.navbar.nativeElement.style.borderBottom = 'none';
+      } else if (
+        this.buttonClass === 'tables-btn' &&
+        this.tables &&
+        this.navbar
+      ) {
+        this.tables.nativeElement.style.display = 'block';
+        this.navbar.nativeElement.style.borderBottom = 'none';
+      } else if (
+        this.buttonClass === 'coffee-btn' &&
+        this.coffee &&
+        this.navbar
+      ) {
+        this.coffee.nativeElement.style.display = 'block';
+        this.navbar.nativeElement.style.borderBottom = 'none';
+      }
+    }
+  }
+  clearDropdown() {
     if (
-      this.buttonClass === 'porsches-btn' &&
       this.porsches &&
-      (this.cursonOnDropdown || this.cursorOnButton)
-    ) {
-      this.porsches.nativeElement.style.display = 'block';
-    } else if (
-      this.buttonClass === 'sunglasses-btn' &&
       this.sunglasses &&
-      (this.cursonOnDropdown || this.cursorOnButton)
-    ) {
-      this.sunglasses.nativeElement.style.display = 'block';
-    } else if (
-      this.buttonClass === 'tables-btn' &&
       this.tables &&
-      (this.cursonOnDropdown || this.cursorOnButton)
-    ) {
-      this.tables.nativeElement.style.display = 'block';
-    } else if (
-      this.buttonClass === 'coffee-btn' &&
       this.coffee &&
-      (this.cursonOnDropdown || this.cursorOnButton)
+      this.navbar
     ) {
-      this.coffee.nativeElement.style.display = 'block';
-    } else if (this.porsches && this.sunglasses && this.tables && this.coffee) {
       this.porsches.nativeElement.style.display = 'none';
       this.sunglasses.nativeElement.style.display = 'none';
       this.tables.nativeElement.style.display = 'none';
       this.coffee.nativeElement.style.display = 'none';
+      this.navbar.nativeElement.style.borderBottom =
+        '1px solid rgba(255, 255, 255, 0.2)';
     }
   }
 }

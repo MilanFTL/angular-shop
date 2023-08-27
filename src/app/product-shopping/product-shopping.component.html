@@ -18,51 +18,36 @@
       (removeFromCartEvent)="removeFromCart($event)"
     ></app-cart>
   </div>
-  <div
-    class="display: flex justify-center transition-colors duration-300 ease-in-out border-b border-white border-opacity-20"
-    [ngClass]="{ 'solid-background': scrolled }"
-  >
+  <div class="navbar" [ngClass]="{ 'solid-background': scrolled }" #navbar>
     <ul class="navbar-ul">
-      <li>
-        <span
-          href=""
-          [ngClass]="{ 'black-text': scrolled }"
-          class="porsches-btn"
-          (mouseenter)="onButtonEnter($event)"
-          (mouseleave)="onButtonLeave()"
-          >Porsches</span
-        >
+      <li
+        (mouseenter)="onButtonEnter($event)"
+        (mouseleave)="onButtonLeave()"
+        class="porsches-btn"
+      >
+        <span href="" [ngClass]="{ 'black-text': scrolled }">Porsches</span>
       </li>
 
-      <li>
-        <span
-          href=""
-          [ngClass]="{ 'black-text': scrolled }"
-          class="sunglasses-btn"
-          (mouseenter)="onButtonEnter($event)"
-          (mouseleave)="onButtonLeave()"
-          >Sunglasses</span
-        >
+      <li
+        (mouseenter)="onButtonEnter($event)"
+        (mouseleave)="onButtonLeave()"
+        class="sunglasses-btn"
+      >
+        <span href="" [ngClass]="{ 'black-text': scrolled }">Sunglasses</span>
       </li>
-      <li>
-        <span
-          href=""
-          [ngClass]="{ 'black-text': scrolled }"
-          class="tables-btn"
-          (mouseenter)="onButtonEnter($event)"
-          (mouseleave)="onButtonLeave()"
-          >Tables</span
-        >
+      <li
+        (mouseenter)="onButtonEnter($event)"
+        (mouseleave)="onButtonLeave()"
+        class="tables-btn"
+      >
+        <span href="" [ngClass]="{ 'black-text': scrolled }">Tables</span>
       </li>
-      <li>
-        <span
-          href=""
-          [ngClass]="{ 'black-text': scrolled }"
-          class="coffee-btn"
-          (mouseenter)="onButtonEnter($event)"
-          (mouseleave)="onButtonLeave()"
-          >Coffee</span
-        >
+      <li
+        (mouseenter)="onButtonEnter($event)"
+        (mouseleave)="onButtonLeave()"
+        class="coffee-btn"
+      >
+        <span href="" [ngClass]="{ 'black-text': scrolled }">Coffee</span>
       </li>
     </ul>
   </div>
