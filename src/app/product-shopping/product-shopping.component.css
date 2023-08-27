@@ -1,5 +1,5 @@
 .solid-background{
-    background-color: white;
+    background-color: white !important;
 }
 .b-border-black{
     border-bottom: rgba(157, 157, 157, 0.3) solid 1px;
@@ -27,12 +27,11 @@
     padding: 0 1rem 0 1rem;
     font-size: 1rem;
     color: white;
-    background-color: beige;
 }
 .navbar {
     display: flex;
     justify-content: center;
-    transition: color 0.3s ease-in-out;
+    transition: background-color 0.3s ease;
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 .bodoni{
@@ -47,5 +46,8 @@
     width: 100%;
     height: 30vh;
     display: none;
-    background-color: rgb(255, 255, 255);
+    background-color: transparent;
+    border-top: 1px solid rgba(0, 0, 0, 0.129);
+    transition: background-color 0.3s ease;
+    color: rgb(0, 0, 0);
 }

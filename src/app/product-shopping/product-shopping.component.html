@@ -1,31 +1,43 @@
 <div class="fixed z-10 w-[100%]">
   <div
     class="display: flex items-baseline justify-between py-3 transition-colors duration-300 ease-in-out border-b border-white border-opacity-20"
-    [ngClass]="{ 'solid-background': scrolled, 'b-border-black': scrolled }"
+    [ngClass]="{
+      'solid-background': scrolled || navbarHovered,
+      'b-border-black': scrolled || navbarHovered
+    }"
   >
     <span
       class="text-white font-normal ml-[2.5vw] text-lg transition-colors duration-300 ease-in-out w-[25vw]"
-      [ngClass]="{ 'text-black': scrolled }"
+      [ngClass]="{ 'text-black': scrolled || navbarHovered }"
       >{{ currentTime | date : "EEEE, HH:mm:ss" }}</span
     >
     <a href=".">
-      <span class="bodoni" [ngClass]="{ 'black-text': scrolled }"
+      <span
+        class="bodoni"
+        [ngClass]="{ 'black-text': scrolled || navbarHovered }"
         >Angular Shop</span
       >
     </a>
     <app-cart
       [cartItems]="cartItems"
+      [navbarHovered]="navbarHovered"
       (removeFromCartEvent)="removeFromCart($event)"
     ></app-cart>
   </div>
-  <div class="navbar" [ngClass]="{ 'solid-background': scrolled }" #navbar>
+  <div
+    class="navbar"
+    [ngClass]="{ 'solid-background': scrolled || navbarHovered }"
+    #navbar
+  >
     <ul class="navbar-ul">
       <li
         (mouseenter)="onButtonEnter($event)"
         (mouseleave)="onButtonLeave()"
         class="porsches-btn"
       >
-        <span href="" [ngClass]="{ 'black-text': scrolled }">Porsches</span>
+        <span href="" [ngClass]="{ 'black-text': scrolled || navbarHovered }"
+          >Porsches</span
+        >
       </li>
 
       <li
@@ -33,21 +45,27 @@
         (mouseleave)="onButtonLeave()"
         class="sunglasses-btn"
       >
-        <span href="" [ngClass]="{ 'black-text': scrolled }">Sunglasses</span>
+        <span href="" [ngClass]="{ 'black-text': scrolled || navbarHovered }"
+          >Sunglasses</span
+        >
       </li>
       <li
         (mouseenter)="onButtonEnter($event)"
         (mouseleave)="onButtonLeave()"
         class="tables-btn"
       >
-        <span href="" [ngClass]="{ 'black-text': scrolled }">Tables</span>
+        <span href="" [ngClass]="{ 'black-text': scrolled || navbarHovered }"
+          >Tables</span
+        >
       </li>
       <li
         (mouseenter)="onButtonEnter($event)"
         (mouseleave)="onButtonLeave()"
         class="coffee-btn"
       >
-        <span href="" [ngClass]="{ 'black-text': scrolled }">Coffee</span>
+        <span href="" [ngClass]="{ 'black-text': scrolled || navbarHovered }"
+          >Coffee</span
+        >
       </li>
     </ul>
   </div>
@@ -56,6 +74,7 @@
     #porsches
     (mouseenter)="onDropdownEnter()"
     (mouseleave)="onDropdownLeave()"
+    [ngClass]="{ 'solid-background': navbarHovered }"
   >
     porsches
   </div>
@@ -64,6 +83,7 @@
     #sunglasses
     (mouseenter)="onDropdownEnter()"
     (mouseleave)="onDropdownLeave()"
+    [ngClass]="{ 'solid-background': navbarHovered }"
   >
     sunglasses
   </div>
@@ -72,6 +92,7 @@
     #tables
     (mouseenter)="onDropdownEnter()"
     (mouseleave)="onDropdownLeave()"
+    [ngClass]="{ 'solid-background': navbarHovered }"
   >
     tables
   </div>
@@ -80,6 +101,7 @@
     #coffee
     (mouseenter)="onDropdownEnter()"
     (mouseleave)="onDropdownLeave()"
+    [ngClass]="{ 'solid-background': navbarHovered }"
   >
     coffee
   </div>

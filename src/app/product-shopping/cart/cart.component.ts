@@ -43,6 +43,7 @@ import {
 })
 export class CartComponent implements OnChanges {
   @Input() cartItems: Product[] = [];
+  @Input() navbarHovered: boolean = false;
 
   @Output() removeFromCartEvent = new EventEmitter<string>();
 

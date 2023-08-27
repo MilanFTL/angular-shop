@@ -2,7 +2,7 @@
   <button
     (click)="setVisibility()"
     class="text-white font-normal text-lg mr-[2.5vw] z-0 transition-colors duration-300 ease-in-out"
-    [ngClass]="{ 'text-black': elementVisible || scrolled }"
+    [ngClass]="{ 'text-black': elementVisible || scrolled || navbarHovered }"
     #cartButton
   >
     Cart({{ cartcounter }})

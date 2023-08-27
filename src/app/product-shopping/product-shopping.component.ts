@@ -103,44 +103,33 @@ export class ProductShoppingComponent implements AfterViewInit {
   buttonClass: string = '';
   cursorOnButton: boolean = false;
   cursonOnDropdown: boolean = false;
+  navbarHovered: boolean = false;
 
   onButtonEnter(event: any) {
     this.buttonClass = event.target.classList[0];
     this.cursorOnButton = true;
     this.manageMegaDropdown();
-    console.log(
-      'OnButtonEnter ' + this.cursorOnButton + ' ' + this.cursonOnDropdown
-    );
   }
   onDropdownEnter() {
     this.cursonOnDropdown = true;
     this.manageMegaDropdown();
-    console.log(
-      'OnDropdownEnter' + this.cursorOnButton + ' ' + this.cursonOnDropdown
-    );
   }
   onButtonLeave() {
     this.cursorOnButton = false;
     this.manageMegaDropdown();
-    console.log(
-      'OnButtonLeave' + this.cursorOnButton + ' ' + this.cursonOnDropdown
-    );
   }
   onDropdownLeave() {
     this.cursonOnDropdown = false;
     this.clearDropdown();
-    console.log(
-      'OnDropdownLeave' + this.cursorOnButton + ' ' + this.cursonOnDropdown
-    );
   }
 
   manageMegaDropdown() {
     if (!this.cursonOnDropdown && !this.cursorOnButton) {
       this.clearDropdown();
     } else {
-      console.log('tried to block');
       if (this.buttonClass === 'porsches-btn' && this.porsches && this.navbar) {
         this.porsches.nativeElement.style.display = 'block';
+        this.navbarHovered = true;
         this.navbar.nativeElement.style.borderBottom = 'none';
       } else if (
         this.buttonClass === 'sunglasses-btn' &&
@@ -148,6 +137,7 @@ export class ProductShoppingComponent implements AfterViewInit {
         this.navbar
       ) {
         this.sunglasses.nativeElement.style.display = 'block';
+        this.navbarHovered = true;
         this.navbar.nativeElement.style.borderBottom = 'none';
       } else if (
         this.buttonClass === 'tables-btn' &&
@@ -155,6 +145,7 @@ export class ProductShoppingComponent implements AfterViewInit {
         this.navbar
       ) {
         this.tables.nativeElement.style.display = 'block';
+        this.navbarHovered = true;
         this.navbar.nativeElement.style.borderBottom = 'none';
       } else if (
         this.buttonClass === 'coffee-btn' &&
@@ -162,6 +153,7 @@ export class ProductShoppingComponent implements AfterViewInit {
         this.navbar
       ) {
         this.coffee.nativeElement.style.display = 'block';
+        this.navbarHovered = true;
         this.navbar.nativeElement.style.borderBottom = 'none';
       }
     }
@@ -180,6 +172,7 @@ export class ProductShoppingComponent implements AfterViewInit {
       this.coffee.nativeElement.style.display = 'none';
       this.navbar.nativeElement.style.borderBottom =
         '1px solid rgba(255, 255, 255, 0.2)';
+      this.navbarHovered = false;
     }
   }
 }
